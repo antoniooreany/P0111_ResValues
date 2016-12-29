@@ -14,13 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private static final int BLACK_18DP = 3;
     private static final int GREY_18DP = 4;
     private static int imageViewIconType = BLACK_48DP;
-    private ImageView imageView = (ImageView) findViewById(R.id.imageView);
+    private ImageView imageView;
     private int imageViewIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
