@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         imageViewIcon = R.drawable.ic_android_black_48dp;
                         imageViewIconType = BLACK_48DP;
                         break;
-
                 }
                 Resources resources = getResources();
                 Drawable drawable = resources.getDrawable(MainActivity.this.imageViewIcon);
