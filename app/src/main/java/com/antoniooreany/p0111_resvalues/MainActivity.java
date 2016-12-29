@@ -13,18 +13,14 @@ public class MainActivity extends AppCompatActivity {
     private static final int GREY_48DP = 2;
     private static final int BLACK_18DP = 3;
     private static final int GREY_18DP = 4;
-    private ImageView imageView;
+    private static int imageViewIconType = BLACK_48DP;
+    private ImageView imageView = (ImageView) findViewById(R.id.imageView);
     private int imageViewIcon;
-    private int imageViewIconType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageViewIcon = R.drawable.ic_android_black_48dp;
-        imageViewIconType = BLACK_48DP;
-        imageView.setImageDrawable(getResources().getDrawable(imageViewIcon));
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -48,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 Resources resources = getResources();
-                Drawable drawable = resources.getDrawable(MainActivity.this.imageViewIcon);
+                Drawable drawable = resources.getDrawable(imageViewIcon);
                 imageView.setImageDrawable(drawable);
             }
         };
