@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,18 +31,26 @@ public class MainActivity extends AppCompatActivity {
                     case BLACK_48DP:
                         imageViewIcon = R.drawable.ic_android_grey600_48dp;
                         imageViewIconType = GREY_48DP;
+                        int margin = 0;
+                        setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case GREY_48DP:
                         imageViewIcon = R.drawable.ic_android_black_18dp;
                         imageViewIconType = BLACK_18DP;
+                        margin = 60;
+                        setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case BLACK_18DP:
                         imageViewIcon = R.drawable.ic_android_grey600_18dp;
                         imageViewIconType = GREY_18DP;
+                        margin = 60;
+                        setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case GREY_18DP:
                         imageViewIcon = R.drawable.ic_android_black_48dp;
                         imageViewIconType = BLACK_48DP;
+                        margin = 0;
+                        setImageViewMargins(margin, margin, margin, margin);
                         break;
                 }
                 Resources resources = getResources();
@@ -50,5 +59,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         imageView.setOnClickListener(onClickListener);
+    }
+
+    private void setImageViewMargins(int left, int top, int right, int bottom) {
+        ViewGroup.LayoutParams imageViewLayoutParams = imageView.getLayoutParams();
+        if (imageViewLayoutParams instanceof ViewGroup.MarginLayoutParams) {
+            final ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) imageViewLayoutParams;
+            marginLayoutParams.setMargins(left, top, right, bottom);
+        }
     }
 }
