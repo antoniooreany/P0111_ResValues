@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int MARGIN_OF_48_DP_ICON = 0;
+    private static final int MARGIN_OF_18_DP_ICON = 60;
     private static final int BLACK_48DP = 1;
     private static final int GREY_48DP = 2;
     private static final int BLACK_18DP = 3;
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView = (ImageView) findViewById(R.id.imageView);
-
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,25 +32,25 @@ public class MainActivity extends AppCompatActivity {
                     case BLACK_48DP:
                         imageViewIcon = R.drawable.ic_android_grey600_48dp;
                         imageViewIconType = GREY_48DP;
-                        int margin = 0;
+                        int margin = MARGIN_OF_48_DP_ICON;
                         setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case GREY_48DP:
                         imageViewIcon = R.drawable.ic_android_black_18dp;
                         imageViewIconType = BLACK_18DP;
-                        margin = 60;
+                        margin = MARGIN_OF_18_DP_ICON;
                         setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case BLACK_18DP:
                         imageViewIcon = R.drawable.ic_android_grey600_18dp;
                         imageViewIconType = GREY_18DP;
-                        margin = 60;
+                        margin = MARGIN_OF_18_DP_ICON;
                         setImageViewMargins(margin, margin, margin, margin);
                         break;
                     case GREY_18DP:
                         imageViewIcon = R.drawable.ic_android_black_48dp;
                         imageViewIconType = BLACK_48DP;
-                        margin = 0;
+                        margin = MARGIN_OF_48_DP_ICON;
                         setImageViewMargins(margin, margin, margin, margin);
                         break;
                 }
